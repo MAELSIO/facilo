@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur d'aides et subventions gratuit — trouvez l'argent que vous ne réclamez pas | Facilo</title>
+<meta name="description" content="Répondez à 6 questions sur votre activité et découvrez gratuitement les aides et subventions nationales, régionales et sectorielles auxquelles vous pourriez avoir droit, avec un montant estimé.">
+<link rel="canonical" href="https://www.facilo.fr/outils/simulateur-aides.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facilo">
+<meta property="og:title" content="Simulateur d'aides et subventions gratuit — trouvez l'argent que vous ne réclamez pas | Facilo">
+<meta property="og:description" content="Répondez à 6 questions sur votre activité et découvrez gratuitement les aides et subventions nationales, régionales et sectorielles auxquelles vous pourriez avoir droit, avec un montant estimé.">
+<meta property="og:url" content="https://www.facilo.fr/outils/simulateur-aides.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Simulateur d'aides et subventions gratuit — trouvez l'argent que vous ne réclamez pas | Facilo">
+<meta name="twitter:description" content="Répondez à 6 questions sur votre activité et découvrez gratuitement les aides et subventions nationales, régionales et sectorielles auxquelles vous pourriez avoir droit, avec un montant estimé.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0f6a52">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      Facilo
+    </a>
+    <a href="../index.html#outils" class="btn btn-primary topbar-cta">Essayer gratuitement</a>
+  </div>
+</div>
+
+<main>
+  <section class="tool-hero">
+    <div class="wrap wrap-narrow">
+      <p class="breadcrumb"><a href="../index.html">Accueil</a> / Simulateur d'aides et subventions</p>
+      <span class="kicker">Gratuit · France entière · tous métiers</span>
+      <h1>L'argent que vous ne réclamez pas : découvrez vos aides en 2 minutes</h1>
+      <p class="hero-sub">
+        Digitalisation, matériel, recrutement, énergie... Répondez à quelques questions sur votre activité :
+        nous listons les aides nationales, régionales et sectorielles auxquelles vous pourriez avoir droit,
+        avec un montant estimé pour chacune.
+      </p>
+      <div class="example-box">
+        <span class="example-label">💬 Exemple de résultat</span>
+        <p>« Profil BTP, Bretagne, 2 ans d'ancienneté, seul(e), projet digitalisation + énergie → 7 dispositifs identifiés, 38 986 € estimés au total. »</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap wrap-narrow">
+
+      <form class="bordereau" id="aidesForm" novalidate>
+        <div class="bordereau-title">Votre situation</div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="metier">Votre métier <span class="hint">(obligatoire)</span></label>
+            <select id="metier" required>
+              <option value="">Sélectionnez...</option>
+              <option value="btp">BTP / artisanat</option>
+              <option value="restauration">Restauration</option>
+              <option value="coiffure">Coiffure / beauté</option>
+              <option value="commerce">Commerce de proximité</option>
+              <option value="immobilier">Immobilier</option>
+              <option value="sante">Santé / paramédical indépendant</option>
+              <option value="liberal">Autre profession libérale</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="region">Votre région <span class="hint">(obligatoire)</span></label>
+            <select id="region" required>
+              <option value="">Sélectionnez...</option>
+              <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
+              <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+              <option value="bretagne">Bretagne</option>
+              <option value="centre-val-de-loire">Centre-Val de Loire</option>
+              <option value="corse">Corse</option>
+              <option value="grand-est">Grand Est</option>
+              <option value="hauts-de-france">Hauts-de-France</option>
+              <option value="ile-de-france">Île-de-France</option>
+              <option value="normandie">Normandie</option>
+              <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+              <option value="occitanie">Occitanie</option>
+              <option value="pays-de-la-loire">Pays de la Loire</option>
+              <option value="paca">Provence-Alpes-Côte d'Azur</option>
+              <option value="dom-tom">Guadeloupe / Martinique / Guyane / Réunion / Mayotte</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="departement">Département <span class="hint">(optionnel, ex : 35)</span></label>
+            <input type="text" id="departement" maxlength="20" placeholder="Ex : 35 - Ille-et-Vilaine">
+          </div>
+          <div class="field">
+            <label for="anciennete">Ancienneté de l'entreprise <span class="hint">(obligatoire)</span></label>
+            <select id="anciennete" required>
+              <option value="">Sélectionnez...</option>
+              <option value="0.5">Moins d'1 an</option>
+              <option value="2">1 à 3 ans</option>
+              <option value="4">3 à 5 ans</option>
+              <option value="10">Plus de 5 ans</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="effectif">Effectif <span class="hint">(obligatoire)</span></label>
+          <select id="effectif" required>
+            <option value="">Sélectionnez...</option>
+            <option value="0">Seul(e) (0 salarié)</option>
+            <option value="2">1 à 2 salariés</option>
+            <option value="9">3 à 9 salariés</option>
+            <option value="15">10 salariés ou plus</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Type de projet envisagé <span class="hint">(un ou plusieurs, obligatoire)</span></label>
+          <div class="segmented" role="group" aria-label="Type de projet envisagé">
+            <input type="checkbox" id="projDigi" name="projet" value="digitalisation">
+            <label for="projDigi">Digitalisation</label>
+            <input type="checkbox" id="projMat" name="projet" value="materiel">
+            <label for="projMat">Matériel</label>
+            <input type="checkbox" id="projRec" name="projet" value="recrutement">
+            <label for="projRec">Recrutement</label>
+            <input type="checkbox" id="projEner" name="projet" value="energie">
+            <label for="projEner">Énergie</label>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Découvrir mes aides potentielles</button>
+          <span class="form-error" id="formError" role="alert"></span>
+        </div>
+      </form>
+
+      <div class="result" id="resultBlock">
+        <div class="result-card" aria-live="polite">
+
+          <div class="aide-total-banner">
+            <div class="aide-total-label">Total estimé <strong id="totalAmount">0 €</strong></div>
+            <div class="aide-total-note" id="totalCount"></div>
+          </div>
+
+          <div class="aide-list" id="aideList"></div>
+          <p class="aide-lock-more" id="lockMore" style="display:none;">
+            🔒 <span id="lockMoreCount"></span> dispositif(s) supplémentaire(s) débloqué(s) ci-dessous
+          </p>
+
+          <div class="email-gate" id="emailGate">
+            <p><strong>Entrez votre email pour recevoir le détail complet</strong> : montants précis, conditions d'éligibilité et démarches pour chaque dispositif.</p>
+            <form id="gateForm">
+              <div class="gate-row">
+                <input type="email" id="gateEmail" placeholder="votre@email.fr" required>
+                <button type="submit" class="btn btn-primary">Recevoir le détail complet</button>
+              </div>
+              <div class="consent-row">
+                <input type="checkbox" id="gateConsent" required>
+                <label for="gateConsent">J'accepte d'être recontacté(e) par email et j'ai lu la <a href="../confidentialite.html">politique de confidentialité</a>.</label>
+              </div>
+              <p class="micro-note">🔒 Pas de spam : un seul email, le détail complet, rien d'autre.</p>
+              <p class="gate-status" id="gateStatus"></p>
+            </form>
+          </div>
+
+          <div class="result-actions" id="resultActions" style="display:none;">
+            <a href="../offre.html" id="goOffreBtn" class="copy-btn" style="text-decoration:none;">🔔 Être alerté(e) des nouvelles aides</a>
+          </div>
+          <div class="upsell-nudge" id="upsellNudge">
+            <span>💡 <strong>Avec Facilo Pro</strong>, la veille des aides se fait toute seule : vous êtes prévenu(e) dès qu'un nouveau dispositif correspond à votre profil.</span>
+            <a href="../offre.html" class="upsell-link">Découvrir le tableau de bord →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <p class="eyebrow">Bon à savoir</p>
+        <h2>Les aides pour artisans et indépendants, en clair</h2>
+      </div>
+      <div class="guide-teaser-grid">
+        <a class="guide-teaser" href="../aide/cumul-aides-subventions.html">
+          <span>Les aides sont-elles cumulables entre elles ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="guide-teaser" href="../aide/calcul-montant-aides.html">
+          <span>Comment sont estimés les montants affichés ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="guide-teaser" href="../aide/ou-demander-une-aide.html">
+          <span>Où et comment faire la demande d'une aide ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap wrap-narrow">
+      <h2>Envie d'être prévenu(e) dès qu'une nouvelle aide apparaît ?</h2>
+      <p class="section-sub" style="margin:0 auto 24px;">Le tableau de bord Facilo surveille les nouveaux dispositifs pour votre profil, sans que vous ayez à y penser.</p>
+      <a href="../offre.html" class="btn btn-primary">Rejoindre la liste d'attente</a>
+      <p class="micro-note">Sans carte bancaire requise</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-links">
+        <a href="../aide/index.html">Aide</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../confidentialite.html">Politique de confidentialité</a>
+        <a href="../cgv.html">CGV</a>
+        <a href="../cookies.html">Cookies</a>
+        <a href="mailto:contact@facilo.fr">Contact</a>
+      </div>
+      <div class="footer-trust">
+        <span>🔒 Conforme RGPD</span>
+        <span>🇫🇷 Hébergement en France</span>
+      </div>
+    </div>
+    <div class="footer-bottom">Facilo — © 2026. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<script src="../assets/js/common.js"></script>
+<script src="../assets/js/tools/simulateur-aides.js"></script>
+</body>
+</html>

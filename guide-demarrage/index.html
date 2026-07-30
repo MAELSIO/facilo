@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide de démarrage Facilo — dans quel ordre tout brancher</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0f6a52">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      Facilo
+    </a>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="wrap wrap-narrow">
+      <span class="kicker">Réservé à l'éditeur du site</span>
+      <h1>Guide de démarrage : dans quel ordre tout brancher</h1>
+      <p class="hero-sub">
+        5 étapes pour faire passer Facilo du prototype fonctionnel à un site prêt pour de vrais visiteurs.
+        L'ordre ci-dessous n'est pas arbitraire : il suit les priorités habituelles d'un lancement SaaS
+        (conformité légale d'abord, mesure et acquisition ensuite, qualité en dernier) — voir le détail
+        de chaque raison sur sa page.
+      </p>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <div class="guide-answer">
+        <span class="label">Décision prise</span>
+        <p>
+          Le site est configuré en mode « outils gratuits + liste d'attente Pro » : les 5 outils sont
+          utilisables immédiatement, et l'offre à 19 €/mois n'est présentée nulle part comme active — chaque
+          CTA dit « Rejoindre la liste d'attente », le formulaire ne fait que capturer un email, et les
+          faux témoignages sur l'automatisation ont été retirés d'offre.html. C'est jouable dès que les
+          étapes 1 et 2 ci-dessous sont faites.
+        </p>
+      </div>
+      <p class="micro-note" style="margin-top:14px;">
+        Quand le vrai tableau de bord Facilo Pro sera développé, il faudra repasser les CTA en
+        « Démarrer l'essai gratuit », réactiver un vrai tunnel essai → abonnement (voir étape 2, section
+        paiement) et remettre de vrais témoignages d'utilisateurs Pro à la place de la bande de promesses
+        actuelle sur offre.html.
+      </p>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <div class="priority-list">
+
+        <a class="priority-item" href="../guide-demarrage/1-informations-legales.html">
+          <span class="rank">1</span>
+          <div>
+            <span class="priority-tag bloquant">Bloquant</span>
+            <h3>Informations légales, marque et tarif définitif</h3>
+            <p>Sans ça, le site n'est pas légal à exploiter et chaque autre étape devra de toute façon être refaite si la marque ou le tarif changent.</p>
+          </div>
+        </a>
+
+        <a class="priority-item" href="../guide-demarrage/2-capture-email.html">
+          <span class="rank">2</span>
+          <div>
+            <span class="priority-tag bloquant">Bloquant</span>
+            <h3>Connecter la capture d'email à un vrai outil d'emailing</h3>
+            <p>C'est le cœur du modèle (outils gratuits → email → conversion) : tant que ce n'est pas branché, chaque visiteur qui laisse son email est un lead perdu.</p>
+          </div>
+        </a>
+
+        <a class="priority-item" href="../guide-demarrage/3-suivi-conversions.html">
+          <span class="rank">3</span>
+          <div>
+            <span class="priority-tag important">Important</span>
+            <h3>Mettre en place le suivi des conversions</h3>
+            <p>Les checklists de lancement SaaS sont unanimes : l'analytics s'installe avant le lancement, pas après, pour mesurer le tunnel dès la première visite.</p>
+          </div>
+        </a>
+
+        <a class="priority-item" href="../guide-demarrage/4-base-aides.html">
+          <span class="rank">4</span>
+          <div>
+            <span class="priority-tag important">Important</span>
+            <h3>Alimenter la vraie base de dispositifs d'aides</h3>
+            <p>Le simulateur affiche publiquement des montants : mieux vaut les fiabiliser avant d'avoir du trafic réel, pour ne pas induire les visiteurs en erreur.</p>
+          </div>
+        </a>
+
+        <a class="priority-item" href="../guide-demarrage/5-generation-ia.html">
+          <span class="rank">5</span>
+          <div>
+            <span class="priority-tag confort">Confort</span>
+            <h3>Brancher une vraie IA de génération</h3>
+            <p>Les templates déterministes actuels produisent déjà des messages crédibles et gratuits à afficher : l'IA est une amélioration de qualité, pas un prérequis au lancement.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="micro-note" style="margin-top:20px;">
+        Ce guide remplace l'ancien fichier NOTE-FINALE.md à la racine du projet (toujours présent, il pointe
+        maintenant ici).
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-bottom">Facilo — guide interne, non indexé.</div>
+  </div>
+</footer>
+
+</body>
+</html>

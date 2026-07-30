@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 3 — Suivi des conversions | Guide de démarrage Facilo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0f6a52">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      Facilo
+    </a>
+  </div>
+</div>
+
+<main>
+  <section class="tool-hero">
+    <div class="wrap wrap-narrow">
+      <p class="breadcrumb"><a href="../guide-demarrage/index.html">Guide de démarrage</a> / Étape 3</p>
+      <span class="kicker">Étape 3 sur 5 · Important</span>
+      <h1>Mettre en place le suivi des conversions</h1>
+    </div>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="wrap wrap-narrow">
+      <div class="guide-answer">
+        <span class="label">Pourquoi cette étape passe avant l'IA et la base d'aides</span>
+        <p>Les checklists de lancement SaaS sont unanimes sur ce point : on installe l'analytics avant le lancement, pas après, pour mesurer le tunnel de conversion dès la toute première visite — pas seulement une fois qu'un problème est déjà suspecté.</p>
+      </div>
+
+      <div class="guide-body">
+        <h2>Ce qui est déjà prêt côté code</h2>
+        <p>
+          <code>window.FacTrack(eventName, props)</code> (dans <code>common.js</code>) appelle automatiquement
+          <code>window.plausible(...)</code> ou <code>window.umami.track(...)</code> dès que l'un des deux scripts
+          est chargé — aucune autre modification n'est nécessaire côté JavaScript.
+        </p>
+        <p>
+          Trois événements sont déjà posés dans le code : <code>tool_generated</code> (à la génération d'un
+          résultat), <code>lead_captured</code> (à la capture d'un email, avec l'outil d'origine en propriété), et
+          <code>cta_click_offre</code> (clic vers la page offre).
+        </p>
+
+        <h2>Ce qu'il reste à faire</h2>
+        <p>
+          Ajoutez le script officiel Plausible ou Umami dans le <code>&lt;head&gt;</code> de chaque page (la ligne
+          est déjà présente en commentaire dans <code>index.html</code>, à dupliquer partout) :
+        </p>
+        <p><code>&lt;script defer data-domain="facilo.fr" src="https://plausible.io/js/script.js"&gt;&lt;/script&gt;</code></p>
+        <p>
+          Puis configurez ces trois événements comme « Goals » dans votre dashboard Plausible pour suivre le taux de
+          clic vers l'offre payante, outil par outil — c'est exactement ce qui permettra de savoir lequel des 5
+          outils gratuits convertit le mieux, et donc où concentrer vos efforts ensuite.
+        </p>
+      </div>
+
+      <div class="guide-cta-card">
+        <p>Étape suivante : alimenter la vraie base de dispositifs d'aides.</p>
+        <a href="../guide-demarrage/4-base-aides.html" class="btn btn-primary">Étape 4 →</a>
+      </div>
+
+      <div class="guide-related">
+        <div class="guide-related-list">
+          <a href="../guide-demarrage/index.html">← Retour au guide de démarrage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-bottom">Facilo — guide interne, non indexé.</div>
+  </div>
+</footer>
+
+</body>
+</html>

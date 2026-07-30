@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facture impayée : générez votre relance gratuite en 30 secondes | Facilo</title>
+<meta name="description" content="Un client tarde à payer ? Facilo rédige à votre place l'email et le SMS de relance, du rappel amical à la mise en demeure. Gratuit, sans inscription, valable pour tous les métiers.">
+<link rel="canonical" href="https://www.facilo.fr/outils/relance-facture.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Facilo">
+<meta property="og:title" content="Facture impayée : générez votre relance gratuite en 30 secondes | Facilo">
+<meta property="og:description" content="Un client tarde à payer ? Facilo rédige à votre place l'email et le SMS de relance, du rappel amical à la mise en demeure. Gratuit, sans inscription, valable pour tous les métiers.">
+<meta property="og:url" content="https://www.facilo.fr/outils/relance-facture.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Facture impayée : générez votre relance gratuite en 30 secondes | Facilo">
+<meta name="twitter:description" content="Un client tarde à payer ? Facilo rédige à votre place l'email et le SMS de relance, du rappel amical à la mise en demeure. Gratuit, sans inscription, valable pour tous les métiers.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0f6a52">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      Facilo
+    </a>
+    <a href="../index.html#outils" class="btn btn-primary topbar-cta">Essayer gratuitement</a>
+  </div>
+</div>
+
+<main>
+  <section class="tool-hero">
+    <div class="wrap wrap-narrow">
+      <p class="breadcrumb"><a href="../index.html">Accueil</a> / Relance de facture impayée</p>
+      <span class="kicker">Gratuit · sans inscription · tous métiers</span>
+      <h1>Une facture qui traîne ? Votre relance part en 30 secondes.</h1>
+      <p class="hero-sub">
+        Renseignez les quelques informations ci-dessous : Facilo rédige pour vous un email et un SMS de
+        relance, avec le ton et les mentions légales adaptés à votre situation — que vous soyez artisan,
+        commerçant ou professionnel libéral.
+      </p>
+      <div class="example-box">
+        <span class="example-label">💬 Exemple généré par Facilo — ton amicale</span>
+        <p>« Un point rapide sur la facture (référence F2026-014) de 890,00 € : le délai de paiement est dépassé de 6 jours et je n'ai pas encore reçu le règlement. Ce genre d'oubli arrive à tout le monde, aucun souci — pourriez-vous simplement y jeter un œil dans les prochains jours ? »</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap wrap-narrow">
+
+      <form class="bordereau" id="relanceForm" novalidate>
+        <div class="bordereau-title">Décrivez votre situation</div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="artisan">Votre nom / entreprise <span class="hint">(obligatoire)</span></label>
+            <input type="text" id="artisan" placeholder="Ex : Dubois Rénovation" required>
+          </div>
+          <div class="field">
+            <label for="client">Nom du client <span class="hint">(obligatoire)</span></label>
+            <input type="text" id="client" placeholder="Ex : M. Kevin Le Gall" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="invoice">Numéro de facture <span class="hint">(recommandé)</span></label>
+            <input type="text" id="invoice" placeholder="Ex : F2026-014">
+          </div>
+          <div class="field">
+            <label for="amount">Montant dû (€) <span class="hint">(obligatoire)</span></label>
+            <input type="number" id="amount" min="0" step="0.01" placeholder="Ex : 2400" required>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="dueDate">Date d'échéance <span class="hint">(obligatoire)</span></label>
+            <input type="date" id="dueDate" required>
+          </div>
+          <div class="field">
+            <label>Type de client</label>
+            <div class="segmented" role="radiogroup" aria-label="Type de client">
+              <input type="radio" id="typePro" name="clientType" value="professionnel" checked>
+              <label for="typePro">Professionnel</label>
+              <input type="radio" id="typePart" name="clientType" value="particulier">
+              <label for="typePart">Particulier</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Niveau de relance</label>
+          <div class="segmented" role="radiogroup" aria-label="Niveau de relance">
+            <input type="radio" id="lvl1" name="level" value="1" checked>
+            <label for="lvl1">Amicale</label>
+            <input type="radio" id="lvl2" name="level" value="2">
+            <label for="lvl2">Ferme</label>
+            <input type="radio" id="lvl3" name="level" value="3">
+            <label for="lvl3">Mise en demeure</label>
+          </div>
+          <p class="micro-note" id="levelDesc"></p>
+        </div>
+
+        <details class="advanced">
+          <summary>Options avancées (RIB, téléphone...)</summary>
+          <div class="field">
+            <label for="payinfo">Infos de paiement à rappeler <span class="hint">(optionnel)</span></label>
+            <textarea id="payinfo" placeholder="Ex : Virement à l'ordre de... IBAN FR76... ou lien de paiement en ligne"></textarea>
+          </div>
+          <div class="field">
+            <label for="phone">Votre téléphone <span class="hint">(optionnel)</span></label>
+            <input type="text" id="phone" placeholder="Ex : 06 12 34 56 78">
+          </div>
+        </details>
+
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Générer ma relance</button>
+          <span class="form-error" id="formError" role="alert"></span>
+        </div>
+      </form>
+
+      <div class="result" id="resultBlock">
+        <div class="result-card" aria-live="polite">
+          <div class="result-meta">
+            <span id="metaClient"></span>
+            <span id="metaAmount"></span>
+            <span id="metaDays"></span>
+          </div>
+          <div class="msg-tabs" role="tablist" aria-label="Format du message">
+            <button class="msg-tab" id="tabEmail" role="tab" aria-selected="true" type="button">Version email</button>
+            <button class="msg-tab" id="tabSms" role="tab" aria-selected="false" type="button">Version SMS</button>
+          </div>
+          <div class="msg-subject" id="msgSubjectRow">
+            <span class="msg-subject-label">Objet :</span>
+            <span id="msgSubject"></span>
+            <button class="copy-mini" id="copySubjectBtn" type="button" aria-label="Copier l'objet">📋</button>
+          </div>
+          <div class="msg-output-wrap">
+            <div class="msg-output locked" id="msgOutput"></div>
+          </div>
+
+          <div class="email-gate" id="emailGate">
+            <p><strong>Entrez votre email pour voir le message complet</strong> et pouvoir le copier ou l'imprimer.</p>
+            <form id="gateForm">
+              <div class="gate-row">
+                <input type="email" id="gateEmail" placeholder="votre@email.fr" required>
+                <button type="submit" class="btn btn-primary">Débloquer mon message</button>
+              </div>
+              <div class="consent-row">
+                <input type="checkbox" id="gateConsent" required>
+                <label for="gateConsent">J'accepte d'être recontacté(e) par email et j'ai lu la <a href="../confidentialite.html">politique de confidentialité</a>.</label>
+              </div>
+              <p class="micro-note">🔒 Pas de spam : un seul email, votre résultat, rien d'autre.</p>
+              <p class="gate-status" id="gateStatus"></p>
+            </form>
+          </div>
+
+          <div class="result-actions" id="resultActions" style="display:none;">
+            <button class="copy-btn" id="copyMsgBtn" type="button"><span aria-hidden="true">📋</span> Copier le message</button>
+            <button class="copy-btn copy-btn-secondary" id="printMsgBtn" type="button"><span aria-hidden="true">🖨️</span> Imprimer / PDF</button>
+          </div>
+          <div class="upsell-nudge" id="upsellNudge">
+            <span>💡 <strong>La prochaine fois</strong>, plus besoin de copier-coller : le tableau de bord Facilo envoie vos relances tout seul, aux bonnes dates.</span>
+            <a href="../offre.html" class="upsell-link">Découvrir le tableau de bord →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <p class="eyebrow">Conseils</p>
+        <h2>Relancer un client qui ne paie pas : ce qu'il faut savoir</h2>
+      </div>
+      <div class="guide-teaser-grid">
+        <a class="guide-teaser" href="../aide/quand-relancer-facture-impayee.html">
+          <span>À partir de quand faut-il relancer un client qui ne paie pas ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="guide-teaser" href="../aide/delai-legal-paiement-facture.html">
+          <span>Quel est le délai légal de paiement d'une facture ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="guide-teaser" href="../aide/mise-en-demeure-penalites-retard.html">
+          <span>Comment et quand envoyer une mise en demeure ?</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap wrap-narrow">
+      <h2>Envie que ces relances partent toutes seules ?</h2>
+      <p class="section-sub" style="margin:0 auto 24px;">Le tableau de bord Facilo programme vos relances automatiquement, jusqu'au paiement.</p>
+      <a href="../offre.html" class="btn btn-primary">Rejoindre la liste d'attente</a>
+      <p class="micro-note">Sans carte bancaire requise</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-links">
+        <a href="../aide/index.html">Aide</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../confidentialite.html">Politique de confidentialité</a>
+        <a href="../cgv.html">CGV</a>
+        <a href="../cookies.html">Cookies</a>
+        <a href="mailto:contact@facilo.fr">Contact</a>
+      </div>
+      <div class="footer-trust">
+        <span>🔒 Conforme RGPD</span>
+        <span>🇫🇷 Hébergement en France</span>
+      </div>
+    </div>
+    <div class="footer-bottom">Facilo — © 2026. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<script src="../assets/js/common.js"></script>
+<script src="../assets/js/tools/relance-facture.js"></script>
+</body>
+</html>

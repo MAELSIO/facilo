@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étape 4 — Base de dispositifs d'aides | Guide de démarrage Facilo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0f6a52">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f6a52'/%3E%3Ctext x='50' y='68' font-size='54' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      Facilo
+    </a>
+  </div>
+</div>
+
+<main>
+  <section class="tool-hero">
+    <div class="wrap wrap-narrow">
+      <p class="breadcrumb"><a href="../guide-demarrage/index.html">Guide de démarrage</a> / Étape 4</p>
+      <span class="kicker">Étape 4 sur 5 · Important</span>
+      <h1>Alimenter la vraie base de dispositifs d'aides</h1>
+    </div>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="wrap wrap-narrow">
+      <div class="guide-answer">
+        <span class="label">Pourquoi avant l'IA mais après l'analytics</span>
+        <p>Le simulateur affiche publiquement des montants d'aides. Une fois du vrai trafic en place, afficher des chiffres approximatifs devient un risque de crédibilité (voire d'exactitude légale) plus pressant qu'améliorer la qualité rédactionnelle des 4 autres outils.</p>
+      </div>
+
+      <div class="guide-body">
+        <h2>Où ça se passe dans le code</h2>
+        <p>
+          La base actuelle est un tableau statique <code>AIDES_DB</code> dans
+          <code>assets/js/tools/simulateur-aides.js</code> (12 dispositifs d'exemple, montants indicatifs,
+          commentaire <code>PLACEHOLDER_AIDES_DB</code>).
+        </p>
+
+        <h2>Où trouver des données réelles et à jour</h2>
+        <ul>
+          <li><strong>National</strong> : Bpifrance (aides-entreprises.bpifrance.fr), France Num, URSSAF (ACRE), France Travail (aides à l'embauche), OPCO, et surtout <strong>aides-entreprises.fr</strong> — l'API du service public de la donnée des aides aux entreprises, la piste la plus simple pour une intégration automatisée.</li>
+          <li><strong>Régional</strong> : sites des 13 régions métropolitaines + DOM, CCI et CMA régionales.</li>
+          <li><strong>Sectoriel</strong> : OPCO de branche, ARS (santé), fédérations professionnelles.</li>
+        </ul>
+
+        <h2>Deux niveaux d'effort possibles</h2>
+        <p>
+          <strong>Court terme</strong> : enrichissez simplement le tableau <code>AIDES_DB</code> à la main — la
+          structure est déjà en place (<code>metiers</code>, <code>regions</code>, <code>projets</code>,
+          <code>ancienneteMax</code>, <code>effectifMax</code>, <code>montantMax</code>, <code>montantLabel</code>,
+          <code>desc</code>).
+        </p>
+        <p>
+          <strong>Moyen terme</strong> : externalisez ces données dans un petit backend ou CMS (Airtable, Google
+          Sheet + API, base SQL) que <code>simulateur-aides.js</code> interroge via <code>fetch()</code> au lieu du
+          tableau en dur — pour pouvoir mettre à jour les dispositifs sans redéployer le site. Faites relire les
+          montants par quelqu'un qui suit l'actualité des aides publiques : ces dispositifs changent souvent
+          (budgets annuels, fins de programme).
+        </p>
+      </div>
+
+      <div class="guide-cta-card">
+        <p>Étape suivante : brancher une vraie IA de génération.</p>
+        <a href="../guide-demarrage/5-generation-ia.html" class="btn btn-primary">Étape 5 →</a>
+      </div>
+
+      <div class="guide-related">
+        <div class="guide-related-list">
+          <a href="../guide-demarrage/index.html">← Retour au guide de démarrage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-bottom">Facilo — guide interne, non indexé.</div>
+  </div>
+</footer>
+
+</body>
+</html>
