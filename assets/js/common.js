@@ -132,7 +132,7 @@ function facFallbackCopy(text){
    sans création de compte). À BRANCHER PLUS TARD sur un vrai outil
    d'emailing (Brevo, Mailchimp, ConvertKit...) — voir NOTE-FINALE.md.
    --------------------------------------------------------- */
-var FACILO_LEAD_NOTIFY_EMAIL = 'lezardav@gmail.com';
+var FACILO_LEAD_NOTIFY_EMAIL = 'maelsiohan01@gmail.com';
 
 function facCaptureLead(toolName, email){
   try{
