@@ -21,7 +21,7 @@ window.FACILO_BASE = (function(){
 
 /* ---------------------------------------------------------
    ANALYTICS — remplacez ce stub par Plausible ou Umami.
-   Exemple Plausible : <script defer data-domain="facilo.fr"
+   Exemple Plausible : <script defer data-domain="getfacilo.fr"
      src="https://plausible.io/js/script.js"></script>
    Ce stub se contente de logger en console + d'appeler
    window.plausible / window.umami si le script est chargé,
