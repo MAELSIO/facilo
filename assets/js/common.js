@@ -28,6 +28,14 @@ window.FACILO_BASE = (function(){
    pour que les événements ci-dessous fonctionnent sans rien
    changer le jour où l'un des deux est branché.
    --------------------------------------------------------- */
+(function loadGoatCounter(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.setAttribute('data-goatcounter', 'https://getfacilo.goatcounter.com/count');
+  s.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(s);
+})();
+
 window.FacTrack = function(eventName, props){
   try{
     if (typeof window.plausible === 'function'){
