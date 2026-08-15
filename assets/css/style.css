@@ -97,9 +97,12 @@ button{ font-family: inherit; }
 }
 .topbar-cta{ flex-shrink: 0; transition: opacity .2s ease, transform .2s ease; }
 .topbar-cta.tb-hide{ opacity: 0; transform: translateY(-6px); pointer-events: none; }
+.topbar-nav-link{ text-decoration: none; color: var(--ink-soft); font-weight: 700; font-size: .88rem; white-space: nowrap; }
+.topbar-nav-link:hover{ color: var(--primary); }
 @media (max-width: 480px){
   .brand{ font-size: 1rem; }
   .brand-mark{ width: 28px; height: 28px; }
+  .topbar-nav-link{ display: none; }
 }
 
 /* ---------- boutons ---------- */

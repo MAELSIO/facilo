@@ -42,6 +42,15 @@ window.FacTrack = function(eventName, props){
       window.plausible(eventName, { props: props || {} });
     } else if (window.umami && typeof window.umami.track === 'function'){
       window.umami.track(eventName, props || {});
+    } else if (window.goatcounter && typeof window.goatcounter.count === 'function'){
+      var propsPart = props && Object.keys(props).length
+        ? '/' + Object.keys(props).map(function(k){ return k + '-' + String(props[k]); }).join('/')
+        : '';
+      window.goatcounter.count({
+        path: 'event/' + eventName + propsPart,
+        title: eventName,
+        event: true
+      });
     }
     var log = JSON.parse(localStorage.getItem('facilo_events') || '[]');
     log.push({ event: eventName, props: props || {}, at: new Date().toISOString() });
