@@ -36,8 +36,28 @@ window.FACILO_BASE = (function(){
   document.head.appendChild(s);
 })();
 
+/* ---------------------------------------------------------
+   GOOGLE ANALYTICS 4 — mesure la conversion par source
+   (campagne email, secteur) en complément de GoatCounter.
+   --------------------------------------------------------- */
+(function loadGA4(){
+  var GA_ID = 'G-ZDN67CYETZ';
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+})();
+
 window.FacTrack = function(eventName, props){
   try{
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', eventName, props || {});
+    }
     if (typeof window.plausible === 'function'){
       window.plausible(eventName, { props: props || {} });
     } else if (window.umami && typeof window.umami.track === 'function'){
