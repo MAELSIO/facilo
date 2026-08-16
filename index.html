@@ -204,53 +204,14 @@
   <!-- ============ 5. PREUVE SOCIALE ============ -->
   <section>
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Ils l'utilisent déjà</p>
-        <h2>Des artisans et commerçants, comme vous</h2>
-        <p class="section-sub">Témoignages recueillis directement auprès de nos clients, avec leur accord — prénom, métier et ville réels.</p>
-      </div>
+      <div id="temoignages">
+        <div class="section-head">
+          <p class="eyebrow">Ils l'utilisent déjà</p>
+          <h2>Des artisans et commerçants, comme vous</h2>
+          <p class="section-sub">Témoignages recueillis directement auprès de nos clients, avec leur accord — prénom, métier et ville réels.</p>
+        </div>
 
-      <div class="testimonials">
-        <div class="testimonial">
-          <p class="testimonial-quote">J'ai utilisé la relance de facture pour un client qui traînait depuis 6 semaines. Il a payé sous 4 jours. J'ai récupéré 1 240 € en 2 semaines au total.</p>
-          <div class="testimonial-who">
-            <span class="testimonial-avatar" aria-hidden="true">M</span>
-            <div>
-              <div class="testimonial-name">Marc</div>
-              <div class="testimonial-meta">Plombier, Rennes</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p class="testimonial-quote">Je détestais répondre aux avis Google, surtout les mauvais. Là je génère une réponse en 30 secondes. Ma note est passée de 4,1 à 4,6 en deux mois.</p>
-          <div class="testimonial-who">
-            <span class="testimonial-avatar" aria-hidden="true">C</span>
-            <div>
-              <div class="testimonial-name">Camille</div>
-              <div class="testimonial-meta">Coiffeuse, Nantes</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p class="testimonial-quote">Les rendez-vous manqués me coûtaient cher. Avec les messages de rappel, j'ai divisé mes no-shows par deux en un mois.</p>
-          <div class="testimonial-who">
-            <span class="testimonial-avatar" aria-hidden="true">S</span>
-            <div>
-              <div class="testimonial-name">Sofiane</div>
-              <div class="testimonial-meta">Auto-école, Lyon</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p class="testimonial-quote">Je ne pensais pas avoir droit à quoi que ce soit. Le simulateur m'a montré 3 aides pour mon installation, dont une de 12 000 € que je n'aurais jamais trouvée seule.</p>
-          <div class="testimonial-who">
-            <span class="testimonial-avatar" aria-hidden="true">É</span>
-            <div>
-              <div class="testimonial-name">Élodie</div>
-              <div class="testimonial-meta">Infirmière libérale, Toulouse</div>
-            </div>
-          </div>
-        </div>
+        <div class="testimonials" id="testimonialsList"></div>
       </div>
 
       <div class="stat-row">
@@ -445,6 +406,15 @@
 </footer>
 
 <script src="assets/js/common.js"></script>
+<script src="assets/data/testimonials.js"></script>
+<script src="assets/js/testimonials.js"></script>
+<script>
+  renderTestimonials(window.FACILO_TESTIMONIALS, {
+    sectionId: 'temoignages',
+    containerId: 'testimonialsList',
+    org: { name: 'Facilo', url: 'https://getfacilo.fr/' }
+  });
+</script>
 <script>
 /* Le bouton du menu et celui du hero sont volontairement identiques
    (même libellé, même couleur). On évite qu'ils soient visibles
