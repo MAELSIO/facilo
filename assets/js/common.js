@@ -165,12 +165,10 @@ function facFallbackCopy(text){
 
 /* ---------------------------------------------------------
    CAPTURE EMAIL — un seul point d'intégration pour les 5 outils.
-   Aujourd'hui : stockage local (démo) + webhook de test (FormSubmit,
-   sans création de compte). À BRANCHER PLUS TARD sur un vrai outil
-   d'emailing (Brevo, Mailchimp, ConvertKit...) — voir NOTE-FINALE.md.
+   Branché sur une route API de facilo-app.fr (Next.js), qui envoie
+   la notification via Resend — deja configure et utilise pour les
+   relances automatiques, pas un nouvel outil.
    --------------------------------------------------------- */
-var FACILO_LEAD_NOTIFY_EMAIL = 'maelsiohan01@gmail.com';
-
 function facCaptureLead(toolName, email){
   try{
     var log = JSON.parse(localStorage.getItem('facilo_leads') || '[]');
@@ -180,19 +178,11 @@ function facCaptureLead(toolName, email){
 
   window.FacTrack('lead_captured', { tool: toolName });
 
-  /* PLACEHOLDER_EMAIL_INTEGRATION
-     Remplacez cet appel par votre vrai endpoint d'emailing
-     (webhook Brevo/Mailchimp, ou votre propre API). */
-  return fetch('https://formsubmit.co/ajax/' + FACILO_LEAD_NOTIFY_EMAIL, {
+  return fetch('https://www.facilo-app.fr/api/leads', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      email: email,
-      outil: toolName,
-      _subject: 'Nouveau lead Facilo — ' + toolName,
-      message: 'Nouvel email capturé sur l\'outil "' + toolName + '" : ' + email
-    })
-  }).catch(function(){ /* on ne bloque jamais l'utilisateur si le webhook échoue */ });
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, tool: toolName })
+  }).catch(function(){ /* on ne bloque jamais l'utilisateur si l'appel échoue */ });
 }
 
 /* ---------------------------------------------------------
