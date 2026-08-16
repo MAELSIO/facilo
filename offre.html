@@ -61,6 +61,20 @@
   </section>
 
   <section>
+    <style>
+      .dash-mock{ display:grid; grid-template-columns: 160px 1fr; background:var(--surface); }
+      .dash-mock-nav{ background:var(--surface-alt); border-right:1px solid var(--line); padding:16px 10px; display:flex; flex-direction:column; gap:4px; }
+      .dash-mock-nav span{ padding:8px 10px; border-radius:8px; font-size:.78rem; color:var(--ink-soft); white-space:nowrap; }
+      .dash-mock-nav span.active{ background:var(--primary); color:#fff; font-weight:800; }
+      .dash-mock-row{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--line); border-radius:8px; }
+      .dash-mock-row span:first-child{ font-size:.85rem; }
+      .dash-mock-badge{ flex-shrink:0; font-size:.72rem; font-weight:800; padding:3px 8px; border-radius:100px; white-space:nowrap; }
+      @media (max-width: 520px){
+        .dash-mock{ grid-template-columns: 1fr; }
+        .dash-mock-nav{ flex-direction:row; flex-wrap:wrap; border-right:none; border-bottom:1px solid var(--line); }
+        .dash-mock-row{ flex-direction:column; align-items:flex-start; gap:6px; }
+      }
+    </style>
     <div class="wrap wrap-narrow">
       <div class="section-head" style="text-align:center;">
         <p class="eyebrow">Aperçu</p>
@@ -73,27 +87,27 @@
           <span style="width:10px;height:10px;border-radius:50%;background:#5fae72;display:inline-block;"></span>
           <span style="margin-left:10px; font-size:.78rem; color:var(--ink-soft);">app.facilo-app.fr/dashboard</span>
         </div>
-        <div style="display:grid; grid-template-columns: 160px 1fr; background:var(--surface);">
-          <div style="background:var(--surface-alt); border-right:1px solid var(--line); padding:16px 10px; display:flex; flex-direction:column; gap:4px;">
-            <span style="padding:8px 10px; border-radius:8px; background:var(--primary); color:#fff; font-size:.78rem; font-weight:800;">📄 Relances</span>
-            <span style="padding:8px 10px; border-radius:8px; font-size:.78rem; color:var(--ink-soft);">⭐ Avis</span>
-            <span style="padding:8px 10px; border-radius:8px; font-size:.78rem; color:var(--ink-soft);">🧾 Devis</span>
-            <span style="padding:8px 10px; border-radius:8px; font-size:.78rem; color:var(--ink-soft);">📅 Rendez-vous</span>
-            <span style="padding:8px 10px; border-radius:8px; font-size:.78rem; color:var(--ink-soft);">💰 Aides</span>
+        <div class="dash-mock">
+          <div class="dash-mock-nav">
+            <span class="active">📄 Relances</span>
+            <span>⭐ Avis</span>
+            <span>🧾 Devis</span>
+            <span>📅 Rendez-vous</span>
+            <span>💰 Aides</span>
           </div>
           <div style="padding:18px; display:flex; flex-direction:column; gap:10px;">
             <p style="margin:0; font-size:.8rem; font-weight:800; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em;">Relances en cours</p>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid var(--line); border-radius:8px;">
-              <span style="font-size:.85rem;">Client Dupont — 890 €</span>
-              <span style="font-size:.72rem; font-weight:800; padding:3px 8px; border-radius:100px; background:#fdeccb; color:#8a5a00;">Programmée J+7</span>
+            <div class="dash-mock-row">
+              <span>Client Dupont — 890 €</span>
+              <span class="dash-mock-badge" style="background:#fdeccb; color:#8a5a00;">Programmée J+7</span>
             </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid var(--line); border-radius:8px;">
-              <span style="font-size:.85rem;">Client Martin — 1 240 €</span>
-              <span style="font-size:.72rem; font-weight:800; padding:3px 8px; border-radius:100px; background:#dcecdf; color:#1f6b3a;">Envoyée</span>
+            <div class="dash-mock-row">
+              <span>Client Martin — 1 240 €</span>
+              <span class="dash-mock-badge" style="background:#dcecdf; color:#1f6b3a;">Envoyée</span>
             </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid var(--line); border-radius:8px; opacity:.6;">
-              <span style="font-size:.85rem; text-decoration:line-through;">Client Bernard — 420 €</span>
-              <span style="font-size:.72rem; font-weight:800; padding:3px 8px; border-radius:100px; background:var(--surface-alt); color:var(--ink-soft);">Payée ✓</span>
+            <div class="dash-mock-row" style="opacity:.6;">
+              <span style="text-decoration:line-through;">Client Bernard — 420 €</span>
+              <span class="dash-mock-badge" style="background:var(--surface-alt); color:var(--ink-soft);">Payée ✓</span>
             </div>
           </div>
         </div>
