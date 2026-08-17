@@ -166,6 +166,17 @@ h1 mark{
 .cta-row{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .micro-note{ font-size: .82rem; color: var(--ink-faint); margin-top: 12px; }
 
+/* Encart court vers un autre outil du même créateur (CVento, Relance
+   Chantier) — toujours contextuel, jamais un "découvrez aussi" générique. */
+.cross-tip{
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--surface-alt); border: 1px solid var(--line); border-left: 4px solid var(--primary);
+  border-radius: var(--radius); padding: 14px 16px; margin: 18px 0;
+  font-size: .9rem; color: var(--ink-soft);
+}
+.cross-tip strong{ color: var(--ink); }
+.cross-tip a{ color: var(--primary); font-weight: 700; }
+
 .trust-bar{
   margin: 28px 0 0; padding: 16px 18px;
   display: flex; flex-wrap: wrap; gap: 10px 22px;

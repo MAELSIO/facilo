@@ -202,6 +202,7 @@
 
     document.getElementById('emailGate').style.display = 'block';
     document.getElementById('resultActions').style.display = 'none';
+    document.getElementById('cventoTip').style.display = projets.indexOf('recrutement') !== -1 ? 'flex' : 'none';
 
     resultBlock.classList.add('show');
     window.FacTrack('tool_generated', { tool: 'simulateur-aides', metier: metier, region: region });
