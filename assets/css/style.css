@@ -311,7 +311,7 @@ hr.sep{ border: none; height: 1px; background: var(--line); margin: 0; }
 }
 .dashboard-item:hover{ background: rgba(246,244,239,.1); border-color: rgba(246,244,239,.4); }
 .dashboard-item .ico{ font-size: 1.2rem; }
-.dashboard-item h4{ margin: 0 0 3px; font-size: .95rem; color: #fff; }
+.dashboard-item h3{ margin: 0 0 3px; font-size: .95rem; color: #fff; }
 .dashboard-item p{ margin: 0; font-size: .84rem; color: #c9d0c4; }
 
 .price-card{
@@ -434,7 +434,7 @@ details.advanced .field{ margin-top: 14px; }
   background: var(--primary-tint); color: var(--primary); font-size: 1.15rem;
   display: flex; align-items: center; justify-content: center;
 }
-.promise-item h4{ margin: 0 0 3px; font-size: .95rem; font-family: var(--font-display); }
+.promise-item h3{ margin: 0 0 3px; font-size: .95rem; font-family: var(--font-display); }
 .promise-item p{ margin: 0; font-size: .85rem; color: var(--ink-soft); }
 
 /* ---------- résultat + email gate ---------- */
