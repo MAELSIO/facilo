@@ -255,6 +255,45 @@ function facWireEmailGate(cfg){
 }
 
 /* ---------------------------------------------------------
+   NEWSLETTER — capture d'email pour les visiteurs qui ne
+   convertissent pas immédiatement (page d'accueil, articles
+   d'aide). Même backend que l'email gate (facCaptureLead),
+   sans exiger de case de consentement ici : le simple fait de
+   remplir et soumettre son email pour recevoir des guides
+   constitue le consentement à cet envoi (RGPD, base légale :
+   consentement explicite par l'action positive de l'utilisateur).
+   --------------------------------------------------------- */
+function facWireNewsletterForm(cfg){
+  var form = document.getElementById(cfg.formId);
+  if (!form) return;
+  var emailInput = document.getElementById(cfg.emailInputId);
+  var statusEl = document.getElementById(cfg.statusId);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!re.test(email)){
+      statusEl.textContent = "Merci d'indiquer une adresse email valide.";
+      statusEl.className = 'gate-status err';
+      return;
+    }
+
+    var submitBtn = form.querySelector('button[type=submit]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi...';
+
+    facCaptureLead(cfg.toolName || 'newsletter', email).then(function(){
+      statusEl.textContent = 'Merci ! Vous recevrez nos prochains guides par email.';
+      statusEl.className = 'gate-status ok';
+      submitBtn.textContent = 'Inscrit ✓';
+      form.querySelectorAll('input').forEach(function(i){ i.disabled = true; });
+    });
+  });
+}
+
+/* ---------------------------------------------------------
    NAVIGATION — surlignage du lien actif (facultatif, léger)
    --------------------------------------------------------- */
 (function highlightActiveNav(){

@@ -368,6 +368,25 @@
 
   <hr class="sep">
 
+  <!-- ============ 7ter. NEWSLETTER ============ -->
+  <section>
+    <div class="wrap wrap-narrow">
+      <div class="email-gate">
+        <p><strong>📬 Pas encore prêt à essayer ?</strong> Recevez nos guides pour gagner du temps sur votre administratif, par email, gratuitement.</p>
+        <form id="newsletterForm">
+          <div class="gate-row">
+            <input type="email" id="newsletterEmail" placeholder="votre@email.fr" required>
+            <button type="submit" class="btn btn-primary">Recevoir les guides</button>
+          </div>
+          <p class="micro-note">🔒 Pas de spam, désinscription en un clic à tout moment.</p>
+          <p class="gate-status" id="newsletterStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
   <!-- ============ 8. CTA FINAL ============ -->
   <section class="final-cta">
     <div class="wrap wrap-narrow">
@@ -413,6 +432,12 @@
     sectionId: 'temoignages',
     containerId: 'testimonialsList',
     org: { name: 'Facilo', url: 'https://getfacilo.fr/' }
+  });
+  facWireNewsletterForm({
+    formId: 'newsletterForm',
+    emailInputId: 'newsletterEmail',
+    statusId: 'newsletterStatus',
+    toolName: 'newsletter-homepage'
   });
 </script>
 <script>
