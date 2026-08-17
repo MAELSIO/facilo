@@ -39,19 +39,37 @@ window.FACILO_BASE = (function(){
 /* ---------------------------------------------------------
    GOOGLE ANALYTICS 4 — mesure la conversion par source
    (campagne email, secteur) en complément de GoatCounter.
+   GA4 dépose des cookies (_ga, _ga_*) et N'EST PAS exempté de
+   consentement CNIL, contrairement à GoatCounter (cookieless).
+   Ne JAMAIS charger ce script avant un clic explicite sur
+   "Accepter" — voir initCookieBanner ci-dessous.
    --------------------------------------------------------- */
-(function loadGA4(){
-  var GA_ID = 'G-ZDN67CYETZ';
+var FAC_GA_ID = 'G-ZDN67CYETZ';
+
+function facLoadGA4(){
+  if (window.gtag) return; // déjà chargé, évite un double chargement
   var s = document.createElement('script');
   s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + FAC_GA_ID;
   document.head.appendChild(s);
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = function(){ window.dataLayer.push(arguments); };
   window.gtag('js', new Date());
-  window.gtag('config', GA_ID);
-})();
+  window.gtag('config', FAC_GA_ID);
+}
+
+/* Supprime les cookies GA déjà déposés (cas d'un refus après un accord
+   précédent, via "Gérer mes préférences cookies"). */
+function facPurgeGA4Cookies(){
+  document.cookie.split(';').forEach(function(c){
+    var name = c.split('=')[0].trim();
+    if (/^_ga/.test(name)){
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname + ';';
+    }
+  });
+}
 
 window.FacTrack = function(eventName, props){
   try{
@@ -86,7 +104,10 @@ window.FacTrack = function(eventName, props){
 (function initCookieBanner(){
   var KEY = 'facilo_consent';
   var existing = localStorage.getItem(KEY);
-  if (existing) return;
+  if (existing){
+    if (existing === 'accept') facLoadGA4();
+    return;
+  }
 
   var banner = document.createElement('div');
   banner.className = 'cookie-banner';
@@ -107,7 +128,13 @@ window.FacTrack = function(eventName, props){
 
   banner.querySelectorAll('[data-consent]').forEach(function(btn){
     btn.addEventListener('click', function(){
-      localStorage.setItem(KEY, btn.getAttribute('data-consent'));
+      var choice = btn.getAttribute('data-consent');
+      localStorage.setItem(KEY, choice);
+      if (choice === 'accept'){
+        facLoadGA4();
+      } else {
+        facPurgeGA4Cookies();
+      }
       banner.classList.remove('show');
       setTimeout(function(){ banner.remove(); }, 350);
     });
