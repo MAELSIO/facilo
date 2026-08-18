@@ -28,7 +28,8 @@
   /* PLACEHOLDER_AI_CALL — heuristique simple de détection de ton.
      À remplacer par une analyse de sentiment via une vraie API IA
      si vous voulez une détection plus fine (voir NOTE-FINALE.md). */
-  var NEG_WORDS = ['décevant','deçu','déçu','nul','horrible','mauvais','sale','attente','retard','cher','froid','impoli','erreur','problème','annulé','sans réponse'];
+  var NEG_WORDS = ['décevant','deçu','déçu','nul','horrible','mauvais','sale','attente','attendu','longtemps','retard','cher','froid','impoli','erreur','problème','annulé','sans réponse',
+    'lent','lente','lenteur','médiocre','inadmissible','catastrophe','catastrophique','insatisfait','mécontent','à éviter','ne reviendrai','ne recommande','plus jamais','jamais content','honteux','scandaleux'];
   var POS_WORDS = ['super','excellent','parfait','génial','recommande','merci','top','impeccable','adorable','rapide','professionnel','satisfait'];
 
   function detectTon(texte){
@@ -36,7 +37,12 @@
     var score = 0;
     POS_WORDS.forEach(function(w){ if (t.indexOf(w) !== -1) score++; });
     NEG_WORDS.forEach(function(w){ if (t.indexOf(w) !== -1) score--; });
-    return score < 0 ? 'negatif' : 'positif';
+    // A egalite (aucun mot-cle detecte des deux cotes), mieux vaut pecher par
+    // excuse plutot que par un remerciement enjoue mal place sur un vrai avis
+    // negatif dont le vocabulaire n'est pas dans la liste — le cas inverse
+    // (ton d'excuse un peu trop prudent sur un avis neutre) est sans risque
+    // reel, l'artisan relit avant d'envoyer.
+    return score <= 0 ? 'negatif' : 'positif';
   }
 
   function buildReponse(data){
